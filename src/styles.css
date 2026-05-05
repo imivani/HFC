@@ -151,9 +151,15 @@ main,
   min-height: auto;
 }
 
+main {
+  padding-top: 84px;
+}
+
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   z-index: 100;
   display: grid;
   grid-template-columns: auto 1fr auto auto;
@@ -162,9 +168,10 @@ main,
   min-height: 84px;
   padding: 0 48px;
   border-bottom: 1px solid rgba(8, 8, 8, 0.1);
-  background: rgba(247, 245, 241, 0.76);
+  background: rgba(247, 245, 241, 0.78);
   color: var(--ink);
-  backdrop-filter: blur(24px) saturate(1.06);
+  -webkit-backdrop-filter: blur(22px) saturate(1.08);
+  backdrop-filter: blur(22px) saturate(1.08);
   transform: translateZ(0);
   transition: background var(--motion-medium) var(--ease), border-color var(--motion-medium) var(--ease), box-shadow var(--motion-medium) var(--ease), color var(--motion-medium) var(--ease), backdrop-filter var(--motion-medium) var(--ease);
   will-change: background, border-color, box-shadow, color;
@@ -184,10 +191,11 @@ main,
 .is-scrolled .site-header {
   min-height: 84px;
   border-bottom-color: rgba(8, 8, 8, 0.12);
-  background: rgba(247, 245, 241, 0.86);
+  background: rgba(247, 245, 241, 0.68);
   color: var(--ink);
-  backdrop-filter: blur(26px) saturate(1.06);
-  box-shadow: 0 14px 30px rgba(8, 8, 8, 0.04);
+  -webkit-backdrop-filter: blur(30px) saturate(1.14);
+  backdrop-filter: blur(30px) saturate(1.14);
+  box-shadow: 0 14px 34px rgba(8, 8, 8, 0.06);
 }
 
 .is-scrolled .site-header::before {
@@ -910,6 +918,7 @@ main,
   border-radius: 22px;
   background: rgba(247, 245, 241, 0.9);
   color: var(--ink);
+  -webkit-backdrop-filter: blur(20px) saturate(1.06);
   backdrop-filter: blur(20px) saturate(1.06);
 }
 
@@ -2785,6 +2794,7 @@ main,
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: rgba(8, 8, 8, 0.9);
   color: #fff;
+  -webkit-backdrop-filter: blur(18px) saturate(1.08);
   backdrop-filter: blur(18px) saturate(1.08);
 }
 
@@ -2839,6 +2849,7 @@ main,
     background: rgba(255, 255, 255, 0.985);
     color: var(--ink);
     box-shadow: none;
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     opacity: 0;
     pointer-events: none;
@@ -3005,6 +3016,10 @@ main,
     min-height: 70px;
     padding: 0 16px;
     gap: 14px;
+  }
+
+  main {
+    padding-top: 70px;
   }
 
   .is-scrolled .site-header {

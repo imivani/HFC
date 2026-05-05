@@ -435,17 +435,6 @@ function placementLogo(name, logo) {
   return `<span class="placement-text-logo">${name}</span>`;
 }
 
-function placementMetaLabel(meta) {
-  return String(meta || '')
-    .replace(/\b20\d{2}\b/g, '')
-    .replace(/[\/,]/g, ' · ')
-    .replace(/(?:\s*·\s*)+/g, ' · ')
-    .replace(/^\s*·\s*|\s*·\s*$/g, '')
-    .replace(/\bin\s*$/i, '')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
 function reportCard(year, report) {
   const [company, file, logo, period, sourceUrl] = report;
   const downloadUrl = `assets/reports/${file}`;
@@ -748,15 +737,12 @@ function EquityResearch() {
               <p>${note}</p>
             </div>
             <div class="placement-logo-grid">
-              ${companies.map(([name, logo, meta]) => {
-                const metaLabel = placementMetaLabel(meta);
-                return `
-                  <figure class="placement-logo-card" data-placement-card data-placement-category="${placementCategoryKeys[index]}">
-                    <div class="placement-logo-frame">${placementLogo(name, logo)}</div>
-                    <figcaption><strong>${name}</strong>${metaLabel ? ` <span>${metaLabel}</span>` : ''}</figcaption>
-                  </figure>
-                `;
-              }).join('')}
+              ${companies.map(([name, logo]) => `
+                <figure class="placement-logo-card" data-placement-card data-placement-category="${placementCategoryKeys[index]}">
+                  <div class="placement-logo-frame">${placementLogo(name, logo)}</div>
+                  <figcaption><strong>${name}</strong></figcaption>
+                </figure>
+              `).join('')}
             </div>
           </article>
         `).join('')}
