@@ -3009,21 +3009,21 @@ main {
 
 @media (max-width: 760px) {
   body.has-mobile-cta {
-    padding-bottom: calc(78px + env(safe-area-inset-bottom));
+    padding-bottom: calc(64px + env(safe-area-inset-bottom));
   }
 
   .site-header {
-    min-height: 70px;
-    padding: 0 16px;
+    min-height: calc(70px + env(safe-area-inset-top));
+    padding: env(safe-area-inset-top) 16px 0;
     gap: 14px;
   }
 
   main {
-    padding-top: 70px;
+    padding-top: calc(70px + env(safe-area-inset-top));
   }
 
   .is-scrolled .site-header {
-    min-height: 70px;
+    min-height: calc(70px + env(safe-area-inset-top));
   }
 
   .brand-mark {
@@ -3040,14 +3040,17 @@ main {
   }
 
   .nav {
-    top: 82px;
-    right: 16px;
-    left: 16px;
-    max-height: calc(100dvh - 98px);
+    top: calc(70px + env(safe-area-inset-top));
+    right: 0;
+    left: 0;
+    max-height: calc(100dvh - 70px - env(safe-area-inset-top));
+    padding: 18px 20px calc(18px + env(safe-area-inset-bottom));
+    border-right: 0;
+    border-left: 0;
   }
 
   body.menu-open::before {
-    inset: 70px 0 0;
+    inset: calc(70px + env(safe-area-inset-top)) 0 0;
   }
 
   .hero-slider,
@@ -3494,11 +3497,18 @@ main {
   }
 
   .footer {
-    padding: 44px 16px calc(92px + env(safe-area-inset-bottom));
+    padding: 44px 16px calc(78px + env(safe-area-inset-bottom));
   }
 
   .mobile-sticky-cta {
     display: flex;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-height: calc(64px + env(safe-area-inset-bottom));
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom)) 16px;
+    border-width: 1px 0 0;
+    pointer-events: auto;
   }
 }
 
