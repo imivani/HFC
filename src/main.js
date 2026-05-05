@@ -321,9 +321,9 @@ const recruitmentStreams = [
 ];
 
 const applicationSteps = [
-  ['01', 'Download the form', 'Use the official Fall 2025 Equity Research application package.'],
-  ['02', 'Complete carefully', 'Follow all instructions and prepare your responses before submitting.'],
-  ['03', 'Ask early', `Contact ${contactEmail} if anything in the package is unclear.`],
+  ['01', 'Watch for updates', 'Applications are expected to open in the fall.'],
+  ['02', 'Prepare early', 'Review the program structure and past reports before applications open.'],
+  ['03', 'Ask questions', `Contact ${contactEmail} if you have questions about the program.`],
 ];
 
 function escapeAttribute(value) {
@@ -645,7 +645,7 @@ function EquityResearch() {
   return `
     ${pageHero('Equity Research', 'Students research companies, build models, and present investment recommendations.', A.skyline, [
       ['Research cycle', 'Company research, valuation, report writing, and presentation preparation.'],
-      ['Applications', '2025-2026 Equity Research Program applications are open.'],
+      ['Applications', 'Applications are currently closed and will open in the fall.'],
     ])}
     <section class="institutional-section reveal" id="equity-program" data-section-label="Program">
       <div class="section-intro">
@@ -666,8 +666,8 @@ function EquityResearch() {
       </div>
       <div class="application-command-copy">
         ${label('Applications')}
-        <h2>Applications are open.</h2>
-        <p>Download the application form, follow the instructions carefully, and contact ${contactEmail} with any questions. Incomplete or incorrectly submitted forms may not be accepted.</p>
+        <h2>Applications will open in the fall.</h2>
+        <p>Equity Research Program applications are currently closed. Check back in the fall for the application package and submission instructions, or contact ${contactEmail} with questions.</p>
         <div class="application-step-list">
           ${applicationSteps.map(([step, title, copy]) => `
             <article class="application-step">
