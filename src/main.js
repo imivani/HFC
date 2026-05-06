@@ -194,9 +194,9 @@ const heroSlides = [
     cta: ['About HFC', '#/about'],
   },
   {
-    title: 'Equity Research',
-    kicker: 'Student equity research',
-    text: 'Students research companies, build models, and present recommendations to industry professionals.',
+    title: 'Equity Research Program',
+    kicker: 'Applied equity research',
+    text: 'Selected student teams conduct company research, build a model, and pitch to industry professionals.',
     image: A.aboutPhoto,
     cta: ['Equity research', '#/equity'],
   },
@@ -227,8 +227,8 @@ const pageMeta = {
     'Executive recruitment information for HFC events, corporate relations, equity research, academics, and logistics.',
   ],
   equity: [
-    'Equity Research & Outcomes | Haskayne Finance Club',
-    'Browse HFC equity research reports, program details, student outcomes, and application resources.',
+    'Equity Research Program | Haskayne Finance Club',
+    'Browse HFC Equity Research Program reports, competition details, student outcomes, and application resources.',
   ],
   team: [
     'Team & Alumni | Haskayne Finance Club',
@@ -505,7 +505,7 @@ function AboutEvents() {
       <div class="about-ledger-copy">
         <div>
           ${label('About')}
-          <h2>Student-run finance club since 1989.</h2>
+          <h2>Our student-run finance club since 1989.</h2>
         </div>
         <div class="about-ledger-text">
           <p>The Haskayne Finance Club is a student-run organization at the University of Calgary’s Haskayne School of Business. Established in 1989, HFC helps students build finance knowledge, meet industry professionals, and get involved on campus.</p>
@@ -522,11 +522,11 @@ function AboutEvents() {
           <strong>600+</strong>
         </div>
         <div>
-          <span>Recent events</span>
-          <strong>${events.length}</strong>
+          <span>Events</span>
+          <strong>40+</strong>
         </div>
         <div>
-          <span>Past reports</span>
+          <span>Equity research teams</span>
           <strong>${reportArchive.length}</strong>
         </div>
       </div>
@@ -635,18 +635,18 @@ function Recruitment() {
 
 function EquityResearch() {
   return `
-    ${pageHero('Equity Research', 'HFC’s in-house stock pitch experience.', A.skyline, [
+    ${pageHero('Equity Research Program', 'A practical introduction to equity research and stock pitching.', A.skyline, [
       ['Research cycle', 'Company research, valuation, report writing, and presentation preparation.'],
       ['Applications', 'Applications are currently closed and will open in the fall.'],
     ])}
     <section class="institutional-section reveal" id="equity-program" data-section-label="Program">
       <div class="section-intro">
         ${label('Program')}
-        <h2>HFC’s in-house stock pitch experience.</h2>
+        <h2>A practical dive into equity research.</h2>
       </div>
       <div class="intro-copy">
-        <p>The Equity Research division gives students an opportunity to develop investment research, financial modeling, and presentation skills. The program has helped students prepare for recruiting in investment banking, asset management, and the Calgary Portfolio Management Trust.</p>
-        <p>Students work in groups of five to research a company in a selected sector, build a model, and present a buy, sell, or hold recommendation to a panel of industry professionals.</p>
+        <p>The Equity Research Program is HFC’s stock pitch competition. Four teams of five students are typically selected to research a company, build a model, and prepare an investment recommendation.</p>
+        <p>Teams receive training, workshop support, and mock pitch feedback before presenting to professionals at ATB Capital Markets.</p>
         <p>Both undergraduate and graduate students are eligible to apply.</p>
       </div>
     </section>
@@ -902,7 +902,7 @@ function render(page = getPage()) {
   }
 
   window.setTimeout(() => document.body.classList.remove('page-entering'), reducedMotion ? 0 : PAGE_ENTER_MS);
-  window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
+  window.scrollTo({ top: 0, behavior: 'auto' });
   isNavigating = false;
 }
 

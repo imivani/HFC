@@ -55,12 +55,13 @@ html {
   overflow-x: hidden;
   background: var(--warm-paper);
   scroll-padding-top: 104px;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
   margin: 0;
   overflow-x: hidden;
+  overscroll-behavior-y: auto;
   background: var(--warm-paper);
   color: var(--ink);
   font-family: var(--sans);
@@ -77,13 +78,13 @@ body.menu-open {
 body.page-changing main,
 body.page-changing .footer {
   opacity: 0;
-  transform: translate3d(0, 12px, 0);
+  transform: none;
 }
 
 body.page-exiting main,
 body.page-exiting .footer {
   opacity: 0;
-  transform: translate3d(0, -8px, 0);
+  transform: none;
   transition-duration: 220ms;
 }
 
@@ -144,8 +145,8 @@ select {
 main,
 .footer {
   min-height: 80vh;
-  transition: opacity var(--motion-page) var(--ease), transform var(--motion-page) var(--ease);
-  will-change: opacity, transform;
+  transition: opacity var(--motion-page) var(--ease);
+  will-change: opacity;
 }
 
 .footer {
@@ -586,25 +587,25 @@ main {
 
 .reveal {
   opacity: 0;
-  transform: translate3d(0, 18px, 0);
-  transition: opacity var(--motion-reveal) var(--ease), transform var(--motion-reveal) var(--ease);
-  will-change: opacity, transform;
+  transition: opacity var(--motion-reveal) var(--ease);
+  will-change: opacity;
 }
 
 .reveal.is-visible {
   opacity: 1;
-  transform: translate3d(0, 0, 0);
+}
+
+.reveal.reveal-complete {
+  will-change: auto;
 }
 
 .reveal > * {
   opacity: 0;
-  transform: translate3d(0, 12px, 0);
-  transition: opacity var(--motion-reveal) var(--ease), transform var(--motion-reveal) var(--ease);
+  transition: opacity var(--motion-reveal) var(--ease);
 }
 
 .reveal.is-visible > * {
   opacity: 1;
-  transform: translate3d(0, 0, 0);
 }
 
 .reveal.is-visible > *:nth-child(2) {
@@ -624,28 +625,24 @@ main {
 }
 
 .reveal .reveal-item {
-  --reveal-y: 14px;
-  --hover-y: 0px;
   opacity: 0;
-  transform: translate3d(0, calc(var(--reveal-y) + var(--hover-y)), 0);
   transition:
     opacity 520ms var(--ease),
-    transform 520ms var(--ease),
     background var(--motion-fast) var(--ease-tight),
     border-color var(--motion-fast) var(--ease-tight),
     box-shadow var(--motion-fast) var(--ease-tight),
     filter var(--motion-fast) var(--ease-tight);
   transition-delay: calc(100ms + (var(--reveal-index, 0) * 38ms));
-  will-change: opacity, transform;
+  will-change: opacity;
 }
 
 .reveal.is-visible .reveal-item {
-  --reveal-y: 0px;
   opacity: 1;
 }
 
 .reveal.reveal-complete .reveal-item {
   transition-delay: 0ms;
+  will-change: auto;
 }
 
 .reveal.is-visible .reveal-item:hover,
@@ -653,22 +650,11 @@ main {
   transition-delay: 0ms;
 }
 
-.hero-copy.reveal,
-.page-hero-copy.reveal {
-  --hero-reveal-y: 10px;
-  transform: translate3d(0, var(--hero-reveal-y), 0);
-}
-
-.hero-copy.reveal.is-visible,
-.page-hero-copy.reveal.is-visible {
-  --hero-reveal-y: 0px;
-}
-
 .hero-slider,
 .page-hero {
   position: relative;
   overflow: hidden;
-  contain: paint;
+  overflow: clip;
   width: min(var(--max), calc(100% - 96px));
   min-height: 600px;
   margin: 24px auto 0;
@@ -681,12 +667,14 @@ main {
 
 .hero-slider {
   min-height: 680px;
+  pointer-events: none;
 }
 
 .page-hero {
   min-height: 560px;
   margin-bottom: 26px;
   isolation: isolate;
+  pointer-events: none;
 }
 
 .hero-slide,
@@ -707,7 +695,7 @@ main {
 .hero-slide.active {
   opacity: 1;
   transform: scale(1);
-  pointer-events: auto;
+  pointer-events: none;
 }
 
 .hero-slide img,
@@ -760,6 +748,14 @@ main {
 
 .hero-copy {
   padding: 0;
+}
+
+.hero-copy a,
+.hero-copy button,
+.page-hero a,
+.page-hero button,
+.slider-control {
+  pointer-events: auto;
 }
 
 .page-hero-copy {
@@ -1280,7 +1276,7 @@ main {
 }
 
 .home-program-index {
-  grid-template-columns: minmax(260px, 0.36fr) minmax(0, 0.64fr);
+  grid-template-columns: minmax(0, 0.58fr) minmax(320px, 0.42fr);
   align-items: stretch;
   margin-top: 46px;
 }
@@ -1293,21 +1289,26 @@ main {
 }
 
 .home-index-panel {
-  grid-row: span 2;
+  grid-column: 1 / -1;
+  grid-row: auto;
   display: grid;
+  grid-template-columns: minmax(0, 0.54fr) minmax(240px, 0.3fr) auto;
   align-content: start;
-  gap: 24px;
-  min-height: 650px;
-  padding: 42px;
+  align-items: end;
+  gap: 24px 34px;
+  min-height: auto;
+  padding: 36px 42px;
   background: var(--ink);
   color: #fff;
 }
 
 .home-index-panel .section-label {
+  grid-column: 1 / -1;
   color: #fff;
 }
 
 .home-index-panel h2 {
+  grid-column: 1;
   max-width: 100%;
   margin: 0;
   font-family: var(--serif);
@@ -1316,7 +1317,8 @@ main {
   line-height: 1.02;
 }
 
-.home-index-panel p {
+.home-index-panel > p:not(.section-label) {
+  grid-column: 2;
   max-width: 390px;
   margin: 0;
   color: rgba(255, 255, 255, 0.72);
@@ -1325,7 +1327,8 @@ main {
 }
 
 .home-index-panel .cta-button {
-  margin-top: 12px;
+  grid-column: 3;
+  margin-top: 0;
   border-color: #fff;
   background: #fff;
   color: var(--ink);
@@ -1489,9 +1492,10 @@ main {
 .about-ledger-red {
   grid-column: 1 / -1;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
   min-height: auto;
   padding: 20px 30px;
   background: var(--red);
@@ -1499,7 +1503,7 @@ main {
 }
 
 .about-ledger-red span {
-  max-width: 210px;
+  max-width: none;
   color: rgba(255, 255, 255, 0.76);
   font-size: 11px;
   font-weight: 800;
@@ -1549,7 +1553,7 @@ main {
 
 .about-foundation {
   display: grid;
-  grid-template-columns: minmax(150px, 0.22fr) minmax(150px, 0.22fr) minmax(150px, 0.22fr) minmax(0, 0.34fr);
+  grid-template-columns: minmax(150px, 0.18fr) minmax(150px, 0.18fr) minmax(220px, 0.32fr) minmax(0, 0.32fr);
   gap: 1px;
   margin-top: 42px;
   border-top: 1px solid var(--line);
@@ -3481,7 +3485,7 @@ main {
 
   .page-hero-copy {
     left: 42px;
-    bottom: 226px;
+    bottom: 54px;
     width: min(590px, calc(100% - 84px));
     padding: 0;
   }
@@ -3524,6 +3528,14 @@ main {
 
   .home-index-panel {
     grid-row: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .home-index-panel .section-label,
+  .home-index-panel h2,
+  .home-index-panel > p:not(.section-label),
+  .home-index-panel .cta-button {
+    grid-column: auto;
   }
 
   .about-ledger-red,
@@ -3708,7 +3720,7 @@ main {
   .page-hero-copy {
     left: 24px;
     right: 24px;
-    bottom: 244px;
+    bottom: 42px;
     width: auto;
     padding: 0;
   }
@@ -3851,6 +3863,17 @@ main {
   .about-ledger-copy,
   .home-index-panel {
     padding: 32px 24px;
+  }
+
+  .home-index-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .home-index-panel .section-label,
+  .home-index-panel h2,
+  .home-index-panel > p:not(.section-label),
+  .home-index-panel .cta-button {
+    grid-column: auto;
   }
 
   .about-ledger-red {
