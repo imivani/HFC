@@ -81,12 +81,12 @@ const navItems = [
 ];
 
 const events = [
-  ['Academic Support', 'FNCE 317 Final Exam Prep Package', 'Comprehensive multiple-choice practice questions, detailed solutions, and a clear concept review package delivered to students by email.'],
-  ['Office Tour', 'Invico Capital Office Tour', 'A private markets and alternative investment firm visit for students interested in credit investing, asset management, and capital markets.'],
-  ['Industry Event', 'Sales & Trading Night', 'Students connected with professionals across global markets, energy finance, market infrastructure, and sales and trading.'],
-  ['Industry Event', 'Energy Night', 'A Calgary Petroleum Club evening focused on energy, infrastructure, advisory, recruitment, and capital markets career paths.'],
-  ['Office Tour', 'National Bank Financial Office Tour', 'Students met the Calgary capital markets team and heard practical perspectives on recruiting, technical preparation, and live deal work.'],
-  ['Community', 'New Year’s Social', 'A 130+ attendee community social at Bank & Baron that brought students together for conversation, networking, food, and drinks.'],
+  ['Academic Support', 'FNCE 317 Final Exam Prep Package', 'Comprehensive multiple-choice practice questions, detailed solutions, and a clear concept review package delivered to students by email.', 'assets/instagram-gallery/fnce-317-package.jpg'],
+  ['Office Tour', 'Invico Capital Office Tour', 'A private markets and alternative investment firm visit for students interested in credit investing, asset management, and capital markets.', 'assets/instagram-gallery/invico-office-tour.jpg'],
+  ['Industry Event', 'Sales & Trading Night', 'Students connected with professionals across global markets, energy finance, market infrastructure, and sales and trading.', 'assets/instagram-gallery/sales-trading-night.jpg'],
+  ['Industry Event', 'Energy Night', 'A Calgary Petroleum Club evening focused on energy, infrastructure, advisory, recruitment, and capital markets career paths.', 'assets/instagram-gallery/energy-night-recap.jpg'],
+  ['Office Tour', 'National Bank Financial Office Tour', 'Students met the Calgary capital markets team and heard practical perspectives on recruiting, technical preparation, and live deal work.', 'assets/instagram-gallery/national-bank-tour.jpg'],
+  ['Community', 'New Year’s Social', 'A 130+ attendee community social at Bank & Baron that brought students together for conversation, networking, food, and drinks.', 'assets/instagram-gallery/new-year-social.jpg'],
 ];
 
 const instagramGallery = [
@@ -138,16 +138,16 @@ const reportYears = [
 ];
 
 const placementGroups = [
-  ['Investment Banking & Capital Markets', 'Banking, advisory, and capital markets platforms.', [
+  ['Investment Banking & Capital Markets', 'Banking, advisory, and capital markets firms.', [
     ['BMO Capital Markets', 'bmo.png', '2024'],
     ['CIBC Capital Markets', 'cibc.png', '2023 / 2024'],
     ['National Bank Financial', 'national-bank.png', '2023'],
     ['Acumen Capital Partners', 'acumen.png', '2023'],
   ]],
-  ['Equity Research & Investment Management', 'Public markets, portfolio management, and investment platforms.', [
-    ['Calgary Portfolio Management Trust', 'cpmt.png', '2023 / 2024 · 4 roles in 2024'],
+  ['Equity Research & Investment Management', 'Public markets, portfolio management, and investment firms.', [
+    ['Calgary Portfolio Management Trust', 'cpmt.png', '2023 / 2024'],
     ['BCI', 'bci.png', '2023'],
-    ['Fidelity Canada', 'fidelity.png', '2023 · 2 roles'],
+    ['Fidelity Canada', 'fidelity.png', '2023'],
     ['Invico Capital Corporation', 'invico.png', '2023'],
     ['TD Asset Management', 'td.png', '2023'],
   ]],
@@ -162,7 +162,7 @@ const placementGroups = [
     ['Tourmaline', 'tourmaline.png', '2024'],
   ]],
   ['Consulting / Advisory / Other', 'Professional services, innovation, and advisory outcomes.', [
-    ['EY', 'ey.png', '2024 · 2 roles'],
+    ['EY', 'ey.png', '2024'],
     ['Accenture', 'accenture.png', '2023'],
     ['Altus', 'altus.png', '2023'],
     ['Innovate Calgary', 'innovate-calgary.png', '2023'],
@@ -188,35 +188,35 @@ const alumni = [
 const heroSlides = [
   {
     title: 'Haskayne Finance Club',
-    kicker: 'Finance education and student programming',
-    text: 'A student-run finance club at Haskayne focused on workshops, events, research, and member support.',
+    kicker: 'Finance education and student events',
+    text: 'A student-run finance club at Haskayne focused on workshops, events, equity research, and member support.',
     image: A.skyline,
     cta: ['About HFC', '#/about'],
   },
   {
     title: 'Equity Research',
-    kicker: 'Student research program',
+    kicker: 'Student equity research',
     text: 'Students research companies, build models, and present recommendations to industry professionals.',
     image: A.aboutPhoto,
     cta: ['Equity research', '#/equity'],
   },
   {
     title: 'Events and Workshops',
-    kicker: 'Programming',
+    kicker: 'Events and workshops',
     text: 'Office tours, speaker events, workshops, competitions, and socials for students interested in finance.',
     image: A.membershipPhoto,
-    cta: ['Programming', '#/about'],
+    cta: ['About & Events', '#/about'],
   },
 ];
 
 const pageMeta = {
   home: [
-    'Haskayne Finance Club | Finance Education, Research & Careers',
+    'Haskayne Finance Club | Finance Education, Research & Events',
     'Haskayne Finance Club supports University of Calgary students through finance education, equity research, events, and professional development.',
   ],
   about: [
     'About & Events | Haskayne Finance Club',
-    'Explore HFC programming, academic support, office tours, industry events, and student finance community initiatives.',
+    'Explore HFC academic support, office tours, industry events, and student finance initiatives.',
   ],
   membership: [
     'Membership | Haskayne Finance Club',
@@ -224,7 +224,7 @@ const pageMeta = {
   ],
   recruitment: [
     'Executive Recruitment | Haskayne Finance Club',
-    'Learn about executive recruitment and leadership opportunities across HFC events, corporate relations, equity research, academics, and logistics.',
+    'Executive recruitment information for HFC events, corporate relations, equity research, academics, and logistics.',
   ],
   equity: [
     'Equity Research & Outcomes | Haskayne Finance Club',
@@ -232,7 +232,7 @@ const pageMeta = {
   ],
   team: [
     'Team & Alumni | Haskayne Finance Club',
-    'Meet the HFC executive team and alumni network leading student finance programming at the Haskayne School of Business.',
+    'Meet the HFC executive team and alumni network at the Haskayne School of Business.',
   ],
   contact: [
     'Contact & Sponsorship | Haskayne Finance Club',
@@ -242,14 +242,12 @@ const pageMeta = {
 
 const pageSections = {
   home: [
-    ['Mandate', 'home-mandate'],
-    ['Pathways', 'home-pathways'],
+    ['Overview', 'home-pathways'],
     ['Partners', 'home-partners'],
   ],
   about: [
     ['About', 'about-overview'],
-    ['Programming', 'about-programming'],
-    ['Instagram', 'about-instagram'],
+    ['Instagram', 'about-gallery'],
   ],
   membership: [
     ['Join', 'membership-overview'],
@@ -307,14 +305,13 @@ const placementCategoryKeys = [
 ];
 
 const homePathways = [
-  ['Membership', 'Mailing list access for HFC events, workshops, office tours, and recruitment updates.', '#/membership', 'Membership'],
-  ['Executive Recruitment', 'Executive roles support events, corporate relations, academics, equity research, and club operations.', '#/recruitment', 'Recruitment'],
-  ['Equity Research', 'Student teams research companies, build models, prepare reports, and present investment recommendations.', '#/equity', 'Research'],
-  ['Events', 'Office tours, speaker events, and socials introduce students to firms and alumni across Calgary finance.', '#/about', 'Programming'],
+  ['Competitions', 'Pitch preparation and stock pitch exposure.', '#/equity', 'Research'],
+  ['Events', 'Office tours, speaker events, and socials.', '#/about', 'Events'],
+  ['Academics', 'Finance workshops and exam support.', '#/about', 'Academics'],
 ];
 
 const recruitmentStreams = [
-  ['Events & Logistics', 'Coordinate events and support day-of logistics for HFC programming.', ['Speaker nights', 'Office tours', 'Venue coordination']],
+  ['Events & Logistics', 'Coordinate events and support day-of logistics for HFC.', ['Speaker nights', 'Office tours', 'Venue coordination']],
   ['Corporate Relations', 'Maintain sponsor, recruiter, and alumni relationships.', ['Partner outreach', 'Sponsorship support', 'Recruiter coordination']],
   ['Equity Research', 'Support research teams, workshops, and report preparation.', ['Team support', 'Modeling workshops', 'Pitch review']],
   ['Academics & Members', 'Prepare student resources and member communications.', ['Exam support', 'Member updates', 'Workshop materials']],
@@ -378,13 +375,7 @@ function label(text) {
   return `<p class="section-label">${text}</p>`;
 }
 
-function pageHero(title, text, image = A.banner, details = []) {
-  const detailMarkup = details.length ? `
-    <aside class="page-hero-panel reveal" aria-label="${title} highlights">
-      ${details.map(([heading, copy]) => `<article><strong>${heading}</strong><span>${copy}</span></article>`).join('')}
-    </aside>
-  ` : '';
-
+function pageHero(title, text, image = A.banner) {
   return `
     <section class="page-hero">
       <img src="${image}" alt="" loading="eager" fetchpriority="high">
@@ -393,7 +384,6 @@ function pageHero(title, text, image = A.banner, details = []) {
         <h1>${title}</h1>
         <p>${text}</p>
       </div>
-      ${detailMarkup}
     </section>
   `;
 }
@@ -411,20 +401,6 @@ function sectionNav(page) {
         </button>
       `).join('')}
     </aside>
-  `;
-}
-
-function mobileStickyCta(page) {
-  const isContact = page === 'contact';
-  const href = isContact ? `mailto:${contactEmail}` : membershipFormUrl;
-  const labelText = isContact ? 'Contact HFC' : 'Join HFC';
-  const attrs = isContact ? '' : ' target="_blank" rel="noopener noreferrer"';
-
-  return `
-    <div class="mobile-sticky-cta" aria-label="Mobile action">
-      <span>Haskayne Finance Club</span>
-      <a href="${href}"${attrs}>${labelText}</a>
-    </div>
   `;
 }
 
@@ -481,38 +457,24 @@ function Home() {
       </div>
     </section>
 
-    <section class="institutional-section reveal" id="home-mandate" data-section-label="Mandate">
-      <div class="section-intro">
-        ${label('Mandate')}
-        <h2>Finance education and student programming.</h2>
+    <section class="home-pathways home-program-index reveal" id="home-pathways" data-section-label="Overview">
+      <aside class="home-index-panel">
+        ${label('HFC overview')}
+        <h2>Competitions, events, and academics.</h2>
+        <p>A short view of how students get involved with HFC.</p>
+        <a class="cta-button" href="${membershipFormUrl}" target="_blank" rel="noopener noreferrer">Join HFC</a>
+      </aside>
+      <div class="home-index-image">
+        <img src="${A.membershipPhoto}" alt="HFC members at a finance event" loading="lazy">
       </div>
-      <div class="intro-copy">
-        <p>The Haskayne Finance Club is a student-run organization at the University of Calgary’s Haskayne School of Business. The club organizes finance workshops, equity research programming, industry events, and student resources throughout the academic year.</p>
-      </div>
-      <div class="mandate-row">
-        <article><span>01</span><strong>Education</strong><p>Financial literacy, technical preparation, and finance workshops.</p></article>
-        <article><span>02</span><strong>Competitions</strong><p>Pitch preparation and competition-oriented finance programming.</p></article>
-        <article><span>03</span><strong>Careers</strong><p>Professional exposure across capital markets, corporate finance, and advisory.</p></article>
-        <article><span>04</span><strong>Research</strong><p>Company coverage, financial modeling, and investment recommendations.</p></article>
-        <article><span>05</span><strong>Development</strong><p>Office tours, events, networking, and recruiting preparation.</p></article>
-      </div>
-    </section>
-
-    <section class="home-pathways reveal" id="home-pathways" data-section-label="Pathways">
-      <div class="pathway-feature">
-        <figure><img src="${A.membershipPhoto}" alt="HFC members at an event" loading="lazy"></figure>
-        <div>
-          ${label('HFC overview')}
-          <h2>Membership, events, research, and recruiting updates.</h2>
-          <p>Students can join the mailing list, attend events, apply for equity research, and follow executive recruitment updates through HFC.</p>
-        </div>
-      </div>
-      <div class="pathway-card-grid">
+      <div class="home-index-list">
         ${homePathways.map(([title, copy, href, action], index) => `
-          <article class="pathway-card${index === 2 ? ' accent' : ''}">
+          <article class="home-index-row">
             <span>${String(index + 1).padStart(2, '0')}</span>
-            <h3>${title}</h3>
-            <p>${copy}</p>
+            <div>
+              <h3>${title}</h3>
+              <p>${copy}</p>
+            </div>
             <a href="${href}">${action} <em>→</em></a>
           </article>
         `).join('')}
@@ -531,29 +493,47 @@ function Home() {
 
 function AboutEvents() {
   return `
-    ${pageHero('About HFC', 'Overview of HFC programming, events, and student involvement.', A.aboutPhoto, [
-      ['Programming', 'Workshops, office tours, speaker events, and socials.'],
-      ['Community', 'Open to students interested in finance at Haskayne.'],
+    ${pageHero('About HFC', 'Finance events, academic support, and student resources at Haskayne.', A.aboutPhoto, [
+      ['Events', 'Workshops, office tours, speaker events, and socials.'],
+      ['Membership', 'Students can join the mailing list for updates.'],
     ])}
-    <section class="split-section reveal" id="about-overview" data-section-label="About">
-      <figure><img src="${A.aboutPhoto}" alt="HFC event awards" loading="lazy"></figure>
-      <div>
-        ${label('About')}
-        <h2>About the club.</h2>
-        <p>HFC is a student-run club that organizes finance programming, networking events, academic support, and equity research opportunities for Haskayne students.</p>
-        <p>This school year, the club is offering social events and workshops focused on foundational and technical finance topics.</p>
-        <p>Students in any year are welcome to join the mailing list to receive updates on upcoming events and recruitment opportunities.</p>
+    <section class="about-ledger reveal" id="about-overview" data-section-label="About">
+      <aside class="about-ledger-red">
+        <span>Haskayne Finance Club</span>
+        <strong>About and Events</strong>
+      </aside>
+      <div class="about-ledger-copy">
+        <div>
+          ${label('About')}
+          <h2>Student-run finance club since 1989.</h2>
+        </div>
+        <div class="about-ledger-text">
+          <p>The Haskayne Finance Club is a student-run organization at the University of Calgary’s Haskayne School of Business. Established in 1989, HFC helps students build finance knowledge, meet industry professionals, and get involved on campus.</p>
+          <p>The club organizes workshops, office tours, academic support, socials, and equity research opportunities throughout the academic year.</p>
+        </div>
+      </div>
+      <div class="about-foundation">
+        <div>
+          <span>Established</span>
+          <strong>1989</strong>
+        </div>
+        <div>
+          <span>Active members</span>
+          <strong>600+</strong>
+        </div>
+        <div>
+          <span>Recent events</span>
+          <strong>${events.length}</strong>
+        </div>
+        <div>
+          <span>Past reports</span>
+          <strong>${reportArchive.length}</strong>
+        </div>
       </div>
     </section>
-    <section class="list-section reveal" id="about-programming" data-section-label="Programming">
-      <div class="section-intro compact">${label('Events')}<h2>Programming</h2></div>
-      <div class="event-list">
-        ${events.map(([type, title, detail]) => `<article><span>${type}</span><h3>${title}</h3><p>${detail}</p><a href="#/membership">Stay informed <em>→</em></a></article>`).join('')}
-      </div>
-    </section>
-    <section class="instagram-section reveal" id="about-instagram" data-section-label="Instagram">
+    <section class="instagram-section reveal" id="about-gallery" data-section-label="Instagram">
       <div class="instagram-header">
-        <div class="section-intro compact">${label('Instagram')}<h2>From @haskaynefinance</h2></div>
+        <div class="section-intro compact">${label('Instagram')}<h2>@haskaynefinance</h2></div>
         <a class="text-link" href="${socialLinks.instagram}" target="_blank" rel="noopener noreferrer">View profile <em>→</em></a>
       </div>
       <div class="instagram-grid">
@@ -594,22 +574,34 @@ function Membership() {
 
 function Recruitment() {
   return `
-    ${pageHero('Executive Recruitment', 'Executives support HFC programming, partnerships, events, and member communication throughout the year.', A.recruitmentPhoto, [
+    ${pageHero('Executive Recruitment', 'Executives support HFC events, partnerships, research, and member communication throughout the year.', A.recruitmentPhoto, [
       ['Executive work', 'Events, research, partnerships, logistics, academics, and member updates.'],
       ['Open interest', 'Students across programs and majors are encouraged to reach out.'],
     ])}
     <section class="recruitment-lead reveal" id="recruitment-overview" data-section-label="Recruitment">
+      <div class="recruitment-status-panel">
+        <span>Executive team</span>
+        <strong>Recruitment</strong>
+        <p>Interest is reviewed throughout the year.</p>
+      </div>
       <figure>
         <img src="${A.recruitmentPhoto}" alt="HFC executive recruitment" loading="lazy">
-        <figcaption><strong>Executive team</strong><span>Events · Research · Partnerships · Members</span></figcaption>
+        <figcaption><strong>HFC executive team</strong><span>Events · Research · Partnerships · Members</span></figcaption>
       </figure>
       <div class="recruitment-lead-copy">
         ${label('Recruitment')}
-        <h2>Executive roles.</h2>
-        <p>HFC relies on its executive team to organize club programming and support members throughout the year. Executive recruitment happens throughout the year. All students, regardless of program or major, are encouraged to reach out if interested in an executive position.</p>
+        <h2>Executive roles at HFC.</h2>
+        <p>HFC relies on its executive team to organize events, support research, manage partnerships, and keep members informed throughout the year. Students across programs and majors are welcome to reach out if interested in an executive position.</p>
         <div class="recruitment-callout">
           <strong>Executive responsibilities</strong>
-          <p>Programming, sponsor relationships, member communications, technical resources, research operations, and event logistics.</p>
+          <ul>
+            <li>Event planning</li>
+            <li>Sponsor relationships</li>
+            <li>Member communications</li>
+            <li>Technical resources</li>
+            <li>Research operations</li>
+            <li>Event logistics</li>
+          </ul>
         </div>
         <a class="cta-button" href="#/contact">Contact HFC</a>
       </div>
@@ -634,7 +626,7 @@ function Recruitment() {
       </div>
       <div class="process-ledger">
         <article><span>01</span><strong>Express interest</strong><p>Reach out through the contact page and identify the area you are interested in.</p></article>
-        <article><span>02</span><strong>Meet the team</strong><p>Learn what the role involves and where support is needed.</p></article>
+        <article><span>02</span><strong>Meet the team</strong><p>Discuss the role scope and where support is needed.</p></article>
         <article><span>03</span><strong>Contribute</strong><p>Support events, research, partnerships, academics, or logistics during the year.</p></article>
       </div>
     </section>
@@ -643,14 +635,14 @@ function Recruitment() {
 
 function EquityResearch() {
   return `
-    ${pageHero('Equity Research', 'Students research companies, build models, and present investment recommendations.', A.skyline, [
+    ${pageHero('Equity Research', 'HFC’s in-house stock pitch experience.', A.skyline, [
       ['Research cycle', 'Company research, valuation, report writing, and presentation preparation.'],
       ['Applications', 'Applications are currently closed and will open in the fall.'],
     ])}
     <section class="institutional-section reveal" id="equity-program" data-section-label="Program">
       <div class="section-intro">
         ${label('Program')}
-        <h2>Research, modeling, and presentations.</h2>
+        <h2>HFC’s in-house stock pitch experience.</h2>
       </div>
       <div class="intro-copy">
         <p>The Equity Research division gives students an opportunity to develop investment research, financial modeling, and presentation skills. The program has helped students prepare for recruiting in investment banking, asset management, and the Calgary Portfolio Management Trust.</p>
@@ -760,7 +752,7 @@ function EquityResearch() {
 
 function TeamAlumni() {
   return `
-    ${pageHero('Our Team & Alumni', 'Students leading HFC events, partnerships, academics, logistics, and equity research programming.', A.recruitmentPhoto, [
+    ${pageHero('Our Team & Alumni', 'Students leading HFC events, partnerships, academics, logistics, and equity research.', A.recruitmentPhoto, [
       ['Leadership', 'The 2025/26 executive team.'],
       ['Alumni', 'Former HFC executives and contributors.'],
     ])}
@@ -874,6 +866,7 @@ const staggeredRevealSelectors = [
   '.pathway-card',
   '.logo-grid > div',
   '.event-list article',
+  '.events-board article',
   '.instagram-card',
   '.discipline-grid > span',
   '.recruitment-stream',
@@ -894,10 +887,9 @@ function render(page = getPage()) {
   pendingPage = page;
   document.body.classList.add('page-changing', 'page-entering');
   document.body.classList.remove('page-exiting', 'menu-open');
-  document.body.classList.add('has-mobile-cta');
   window.clearTimeout(sliderTimer);
   updatePageMeta(page);
-  document.getElementById('root').innerHTML = `${header(page)}${sectionNav(page)}<main>${pages[page]()}</main>${footer()}${mobileStickyCta(page)}`;
+  document.getElementById('root').innerHTML = `${header(page)}${sectionNav(page)}<main>${pages[page]()}</main>${footer()}`;
   bindInteractions();
 
   const finishEnter = () => document.body.classList.remove('page-changing');
